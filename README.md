@@ -62,3 +62,41 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+.env 
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=session_based_authetication
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+To create a new database
+    In terminal 
+        - mysql
+    Then 
+        - create database DATABASE_NAME    
+
+To migrate database (create table in created database)
+- php artisan migrate
+
+To Run 
+- php artisan serve
+
+
+Git
+    Branch 
+        1. main
+
+Work:
+    - Login
+    - Register
+
+    - disable route '/' if user is not logged in
+    - disable route '/login' and '/register' if user is logged in
+    - disable route '/login' on back button pressed after user logged in
+
+
