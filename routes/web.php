@@ -19,10 +19,12 @@ use App\Http\Controllers\UserController;
 // });
 
 
-Route::get('/login', [UserController::class,'login'])->name('login')->middleware('alreadyLoggedIn');
+
+
+Route::get('/login', [UserController::class,'login'])->name('login')->middleware(['alreadyLoggedIn','preventBackHistory']);
 Route::post('/login', [UserController::class,'doLogin']);
 
-Route::get('/register', [UserController::class,'register'])->middleware('alreadyLoggedIn');
+Route::get('/register', [UserController::class,'register'])->middleware(['alreadyLoggedIn','preventBackHistory']);
 Route::post('/register', [UserController::class,'doRegister']);
 
 Route::get('/', function () {
